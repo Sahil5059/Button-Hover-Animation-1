@@ -5,18 +5,19 @@ import { motion } from 'framer-motion';
 
 type Props = {}
 
-const Page = (props: Props) => {
+const Page = ( props: Props ) => {
 
 	const [ isHovered, setIsHovered ] = useState( false );
 	const [ isClicked, setIsClicked ] = useState( false );
 
   	return (
     	<div className='w-[100%] h-[100vh] flex flex-col justify-center items-center bg-[#000000]'>
-      		<div className='w-[745px] h-[273px] flex flex-col justify-center items-center main-container relative cursor-pointer'>
+      		<div className='w-[745px] h-[273px] flex flex-col justify-center items-center relative cursor-pointer main-container'>
 				<motion.div initial={{ scale: 1 }} animate={{ scale: isHovered && !isClicked ? 1.15 : 1, x: isHovered && !isClicked ? 50 : 0, y: isHovered && !isClicked ? 20 : 0 }} transition={{ type:"spring", stiffness:300, damping:20 }}  className='w-[745px] h-[273px] flex justify-center items-center border-[3px] border-[#FFFFFF] rounded-[256px] font-[400] text-[96px] leading-[116px]'></motion.div>
 				<motion.div whileHover={{ scale: 1.15, x: 70, y: 0 }} whileTap={{ scale: 1, x: 0, y: 0 }} transition={{ type:"spring", stiffness:300, damping:20 }} onMouseEnter={ () => setIsHovered( true )} onMouseLeave={ () => setIsHovered( false )} onMouseDown={ () => setIsClicked( true )} onMouseUp={ () => setIsClicked( false )} className='w-[745px] h-[273px] bg-[transparent] flex justify-center items-center absolute inset-0 m-auto z-[99] rounded-[256px] font-[400] text-[96px] leading-[116px]'>Follow</motion.div>
 				<motion.div initial={{ scale: 1 }} animate={{ scale: isHovered && !isClicked ? 1.15 : 1, x: isHovered && !isClicked ? 70 : 0, y: 0 }} className='w-[745px] h-[273px] flex items-center justify-center absolute inset-0 m-auto border-[3px] border-[#FFFFFF] rounded-[256px] z-[98] bg-[#000000] overflow-hidden'>
 					<motion.div initial={{ scale: 1 }} animate={{ scale: isHovered && !isClicked ? 1.15 : 1, x: isHovered && !isClicked ? 1100 : 0, y: 0 }} transition={{ type:"spring", stiffness:300, damping:20 }} className='w-[373px] h-[464px]' >
+						{/* svg code, dont panic */}
 						<svg width="373" height="464" viewBox="0 0 373 464" fill="none" xmlns="http://www.w3.org/2000/svg" className='translate-x-[-480px] translate-y-[50px]'>
 							<rect width="62.6935" height="531.056" transform="matrix(0.816545 -0.577281 0.592561 0.805525 0 36.1918)" fill="white"/>
 							<rect width="15.9221" height="480.644" transform="matrix(0.816545 -0.577281 0.592561 0.805525 74.6138 18.9229)" fill="white"/>
@@ -24,6 +25,7 @@ const Page = (props: Props) => {
 					</motion.div>
 				</motion.div>
 				<motion.div initial={{ opacity: 0 }} animate={{ opacity: isHovered && !isClicked ? 1 : 0 }} className='min-w-[924px] min-h-[427px] absolute inset-0 m-auto z-[98] translate-x-[-40px]'>
+					{/* svg code, dont panic */}
 					<svg width="924" height="427" viewBox="0 0 924 427" fill="none" xmlns="http://www.w3.org/2000/svg" className='absolute inset-0 m-auto'>
 						<path d="M740.883 25.4653L749.177 42.2016L767.28 46.7998L750.544 55.0936L745.946 73.1975L737.652 56.4612L719.548 51.863L736.285 43.5691L740.883 25.4653Z" fill="url(#paint0_linear_1466_233)"/>
 						<path d="M518.784 393.191L524.313 404.348L536.382 407.414L525.225 412.943L522.159 425.012L516.63 413.855L504.561 410.789L515.718 405.26L518.784 393.191Z" fill="url(#paint1_linear_1466_233)"/>
